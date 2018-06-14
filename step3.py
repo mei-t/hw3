@@ -55,7 +55,6 @@ def evaluate(tokens):
     while index < len(tokens):
         if tokens[index]['type'] == 'NUMBER':
             if tokens[index - 1]['type'] == 'MULTIPLY':
-                print "answer = %f\n" % answer
                 answer = tokens[index-2]['number'] * tokens[index]['number']
                 print "answer = %f\n" % answer
             else: pass
@@ -71,6 +70,7 @@ def evaluate(tokens):
             else:
                 print 'Invalid syntax'
         index += 1
+        print "answer = %f\n" % answer
     return answer
 
 
